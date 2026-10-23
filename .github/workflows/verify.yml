@@ -1,0 +1,20 @@
+name: Verify
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check curriculum, grading, math and storage
+        run: |
+          node 维护/verify_banks.cjs
+          node 维护/verify_pedagogy.cjs
+          node 维护/verify_curriculum.cjs
+          node 维护/verify_graph_answers.cjs
+          node 维护/verify_math.cjs
+          node 维护/verify_state.cjs

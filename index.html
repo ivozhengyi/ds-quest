@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b111b">
+  <meta name="description" content="基于课程PPT与历年卷的双入口离线学习站，初学120题、复习371题，含概念回忆、分层练习与100分模拟。">
+  <title>数据结构探险 · DS QUEST</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/katex/katex.min.css">
+  <link rel="stylesheet" href="styles.css?v=public-1">
+  <script src="assets/katex/katex.min.js" defer></script>
+  <script src="math-format.js?v=public-1" defer></script>
+  <script src="content.js?v=public-1" defer></script>
+  <script src="learning-guides.js?v=public-1" defer></script>
+  <script src="sources.js" defer></script>
+  <script src="animations.js?v=public-1" defer></script>
+  <script src="learn-bank.js?v=public-1" defer></script>
+  <script src="review-bank.js?v=public-1" defer></script>
+  <script src="review-lessons.js?v=public-1" defer></script>
+  <script src="exam-meta.js?v=public-1" defer></script>
+  <script src="curriculum.js?v=public-1" defer></script>
+  <script src="training-engine.js?v=public-1" defer></script>
+  <script src="app.js?v=public-1" defer></script>
+</head>
+<body data-mode="learn">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <aside class="sidebar" id="sidebar" aria-label="主导航">
+    <a class="brand" href="#home" aria-label="数据结构探险首页"><span class="brand-symbol">{<b>✦</b>}</span><span>DS QUEST<small>数据结构探险</small></span></a>
+    <div class="sidebar-label">探索你的知识世界</div>
+    <nav id="navigation">
+      <a href="#map" data-nav="map"><span class="nav-icon">⌘</span>第一次学<span class="nav-dot"></span></a>
+      <a href="#review" data-nav="review"><span class="nav-icon">⚡</span>复习冲刺<span class="nav-dot"></span></a>
+      <a href="#lab" data-nav="lab"><span class="nav-icon">▷</span>算法实验室<span class="nav-dot"></span></a>
+      <a href="#exam" data-nav="exam"><span class="nav-icon">▦</span>考法与题量<span class="nav-dot"></span></a>
+      <a href="#atlas" data-nav="atlas"><span class="nav-icon">▤</span>公式与图鉴<span class="nav-dot"></span></a>
+      <a href="#bag" data-nav="bag"><span class="nav-icon">♧</span>错题与笔记<span class="nav-dot"></span></a>
+    </nav>
+    <div class="sidebar-label chapters-label">八个章节 · 滚动查看</div>
+    <div id="chapterNav" class="chapter-nav"></div>
+    <div class="sidebar-bottom"><div class="local-indicator"><i></i>离线学习 · 本机存档</div><p>慢慢来，每一步都算数。</p><button class="text-button" data-action="help">使用说明 ↗</button></div>
+  </aside>
+  <button class="nav-scrim" id="navScrim" aria-label="收起导航" hidden></button>
+  <header class="topbar">
+    <button class="icon-button menu-toggle" id="menuToggle" aria-controls="sidebar" aria-label="打开导航" aria-expanded="false">☰</button>
+    <div class="mode-switch" role="group" aria-label="学习模式"><button data-action="mode" data-value="learn" id="modeLearn">✦ 第一次学</button><button data-action="mode" data-value="review" id="modeReview">⚡ 复习冲刺</button></div>
+    <button class="search-trigger" data-action="search"><span>⌕</span>搜索知识点、复习内容<kbd>⌘ K</kbd></button>
+    <div class="player"><div class="avatar" aria-hidden="true">◈</div><div><strong id="playerLevel">Lv. 1</strong><span id="playerXP">0 XP · 新手探索者</span></div></div>
+  </header>
+  <main id="main" tabindex="-1"><div id="app"></div><footer class="footer"><span>DS QUEST <i>✦</i> 让抽象的知识，变得可以探索。</span><a href="#sources/1">资料与公开版说明</a><a href="#exam">历年考法与题量分配 ↗</a></footer></main>
+  <div class="modal-backdrop" id="searchModal" hidden><section class="search-dialog" role="dialog" aria-modal="true" aria-labelledby="searchTitle"><div class="dialog-top"><h2 id="searchTitle">寻找一块知识拼图</h2><button class="icon-button" data-action="close-search" aria-label="关闭搜索">✕</button></div><label class="search-input-wrap"><span>⌕</span><input id="searchInput" placeholder="试试“循环队列”“时间复杂度”“哈夫曼”…" autocomplete="off" aria-label="搜索知识点和课件"><kbd>ESC</kbd></label><p class="search-hint">搜索 55 个初学关卡、37 个复习专题与 378 页课件文本</p><div id="searchResults" class="search-results"></div></section></div>
+  <dialog id="infoDialog" class="info-dialog"><div class="dialog-top"><h2 id="infoTitle"></h2><button class="icon-button" data-action="close-info" aria-label="关闭">✕</button></div><div id="infoBody"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">请启用 JavaScript，以使用学习关卡、算法演示和本地存档功能。</p></noscript>
+</body>
+</html>
